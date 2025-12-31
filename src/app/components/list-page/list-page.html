@@ -1,0 +1,17 @@
+<h1>SAW TODO</h1>
+
+<div class="container">
+    <input 
+        type="text" 
+        class="text-input"
+        placeholder="Inserisci lista..."
+        [(ngModel)]="newListName"
+        (keydown.enter)="addList()"
+    />
+
+    <div class="list">
+        @for (l of listService.lists(); track l.id) {
+            <app-list [list]="l"></app-list>
+        }
+    </div>
+</div>

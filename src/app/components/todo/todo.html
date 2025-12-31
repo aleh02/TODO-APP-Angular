@@ -1,0 +1,22 @@
+<div class="list-title">
+    <label class="title" 
+        style="display: flex; gap: 10px; align-items: center;">
+        <input 
+            type="checkbox" 
+            [checked]="todo.completed === 'done'" 
+            (change)="toggle()"
+        />
+        <span [style.text-decoration]="todo.completed === 'done' ? 'line-through' : 'none'">
+            {{ todo.text }}
+        </span>
+    </label>
+
+    <div>
+        <button class="btn" (click)="edit()" title="Modifica">
+            <app-edit-icon></app-edit-icon>
+        </button>
+        <button class="btn" (click)="remove()" title="Elimina">
+            <app-close-icon></app-close-icon>
+        </button>
+    </div>
+</div>

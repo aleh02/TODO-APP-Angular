@@ -1,0 +1,24 @@
+<h1>
+    <a class="back" routerLink="/lists" title="Indietro">
+        <app-back-icon></app-back-icon>
+    </a>
+    {{ list()?.name ?? 'Lista' }}
+</h1>
+
+<div class="container">
+    <input 
+        type="text" 
+        class="text-input"
+        placeholder="Inserisci todo..."
+        [(ngModel)]="newTodoText"
+        (keydown.enter)="addTodo()"
+    />
+
+    <div class="list">
+        @if (list()) {
+            @for (t of list()!.todos; track t.id) {
+                <app-todo [listId]="listId()" [todo]="t"></app-todo>
+            }
+        }
+    </div>
+</div>
