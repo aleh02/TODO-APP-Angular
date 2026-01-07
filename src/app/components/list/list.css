@@ -1,0 +1,20 @@
+.list-title {
+    display: block !important;
+    margin-bottom: -5px;
+}
+
+.list-bottom{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-bottom .bar {
+    flex: 1
+}
+
+.actions {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}

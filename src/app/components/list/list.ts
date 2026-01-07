@@ -30,4 +30,13 @@ export class List {
     this.listService.deleteList(this.list.id);
   }
 
+  get percentage(): number {
+    const total = this.list.todos.length;
+    if(total == 0) return 0;
+
+    const done = this.list.todos.filter(t => 
+      t.completed === 'done').length;
+
+    return Math.round((done / total) * 100);  
+  }
 }

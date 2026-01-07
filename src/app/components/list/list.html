@@ -1,15 +1,25 @@
-<div class="list-title">
-    <span class="title">{{ list.name }}</span>
+<div class="list">
+    <div class="list-title">
+        <span class="title">{{ list.name }}</span>
+    </div>
 
-    <div>
-        <button class="btn" (click)="edit()" title="Modifica">
-            <app-edit-icon></app-edit-icon>
-        </button>
-        <button class="btn" (click)="open()" title="Apri">
-            <app-open-icon></app-open-icon>
-        </button>
-        <button class="btn" (click)="remove()" title="Elimina">
-            <app-close-icon></app-close-icon>
-        </button>
+    <div class="list-bottom">
+        <div class="bar">
+            <span class="percentage" [attr.data-value]="percentage + '%'" [style.width.%]="percentage">
+                <span class="tooltip">{{ percentage }}%</span>
+            </span>
+        </div>
+
+        <div class="actions">
+            <button class="btn" (click)="edit()" title="Modifica">
+                <app-edit-icon></app-edit-icon>
+            </button>
+            <button class="btn" (click)="open()" title="Apri">
+                <app-open-icon></app-open-icon>
+            </button>
+            <button class="btn" (click)="remove()" title="Elimina">
+                <app-close-icon></app-close-icon>
+            </button>
+        </div>
     </div>
 </div>
